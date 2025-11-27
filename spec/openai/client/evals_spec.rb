@@ -141,6 +141,21 @@ RSpec.describe OpenAI::Client do
     end
 
     describe "#runs" do
+      describe "#list", :vcr do
+        let(:cassette) { "evals runs list" }
+        let(:response) { OpenAI::Client.new.evals.runs.list(eval_id: eval_id) }
+
+        before { run_id }
+
+        it "succeeds" do
+          VCR.use_cassette(cassette) do
+            expect(response["object"]).to eq("list")
+            expect(response["data"]).to be_an(Array)
+            expect(response.dig("data", 0, "object")).to eq("eval.run") if response["data"].any?
+          end
+        end
+      end
+
       describe "#retrieve" do
         let(:cassette) { "evals runs retrieve" }
         let(:response) do

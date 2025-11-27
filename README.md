@@ -84,6 +84,19 @@ Stream GPT-5 chats with the Responses API, initiate Realtime WebRTC conversation
       - [Vision in a thread](#vision-in-a-thread)
       - [Runs involving function tools](#runs-involving-function-tools)
       - [Exploring chunks used in File Search](#exploring-chunks-used-in-file-search)
+    - [Evals](#evals)
+      - [Create an Eval](#create-an-eval)
+      - [Retrieve an Eval](#retrieve-an-eval)
+      - [List Evals](#list-evals)
+      - [Update an Eval](#update-an-eval)
+      - [Delete an Eval](#delete-an-eval)
+      - [Create an Eval Run](#create-an-eval-run)
+      - [List Eval Runs](#list-eval-runs)
+      - [Retrieve an Eval Run](#retrieve-an-eval-run)
+      - [Cancel an Eval Run](#cancel-an-eval-run)
+      - [Delete an Eval Run](#delete-an-eval-run)
+      - [List Output Items](#list-output-items)
+      - [Retrieve an Output Item](#retrieve-an-output-item)
     - [Image Generation](#image-generation)
       - [DALL·E 2](#dalle-2)
       - [DALL·E 3](#dalle-3)
@@ -1667,6 +1680,253 @@ end.compact
 
 # The first chunk will be the closest match to the prompt. Finally, if you want to view the completed message(s):
 client.messages.list(thread_id: thread_id)
+```
+
+### Evals
+
+Evals allow you to systematically evaluate the quality and performance of your AI models. You can create evaluations with specific testing criteria, run them against your models, and analyze the results.
+
+#### Create an Eval
+
+Create an evaluation with testing criteria to assess model outputs:
+
+```ruby
+response = client.evals.create(
+  parameters: {
+    name: "Sentiment Analysis Eval",
+    data_source_config: {
+      type: "stored_completions",
+      metadata: { usecase: "chatbot" }
+    },
+    testing_criteria: [
+      {
+        type: "label_model",
+        model: "o3-mini",
+        input: [
+          {
+            role: "developer",
+            content: "Classify the sentiment of the following statement as one of 'positive', 'neutral', or 'negative'"
+          },
+          {
+            role: "user",
+            content: "Statement: {{item.input}}"
+          }
+        ],
+        passing_labels: ["positive"],
+        labels: ["positive", "neutral", "negative"],
+        name: "Sentiment grader"
+      }
+    ],
+    metadata: { team: "product", version: "1.0" }
+  }
+)
+puts response["id"]
+# => "eval_abc123"
+```
+
+#### Retrieve an Eval
+
+Get details about a specific evaluation:
+
+```ruby
+eval_id = "eval_abc123"
+response = client.evals.retrieve(id: eval_id)
+puts response["name"]
+# => "Sentiment Analysis Eval"
+```
+
+#### List Evals
+
+List all evaluations with optional pagination:
+
+```ruby
+# List all evals
+response = client.evals.list
+
+# List with limit
+response = client.evals.list(parameters: { limit: 10 })
+
+# List with pagination
+response = client.evals.list(parameters: { after: "eval_abc123", limit: 20 })
+```
+
+#### Update an Eval
+
+Update an evaluation's metadata:
+
+```ruby
+response = client.evals.update(
+  id: eval_id,
+  parameters: {
+    metadata: { version: "2.0", updated: "true" }
+  }
+)
+```
+
+#### Delete an Eval
+
+Delete an evaluation:
+
+```ruby
+response = client.evals.delete(id: eval_id)
+puts response["deleted"]
+# => true
+```
+
+#### Create an Eval Run
+
+Run an evaluation against a model with test data:
+
+```ruby
+response = client.evals.runs.create(
+  eval_id: eval_id,
+  parameters: {
+    name: "gpt-4o-mini baseline",
+    data_source: {
+      type: "completions",
+      input_messages: {
+        type: "template",
+        template: [
+          {
+            role: "system",
+            content: "You are a sentiment analyzer. Respond with only: positive, neutral, or negative."
+          },
+          {
+            role: "user",
+            content: "{{item.input}}"
+          }
+        ]
+      },
+      sampling_params: {
+        temperature: 0.7,
+        max_completion_tokens: 50,
+        top_p: 1.0
+      },
+      model: "gpt-4o-mini",
+      source: {
+        type: "file_content",
+        content: [
+          {
+            item: {
+              input: "I absolutely love this product! Best purchase ever.",
+              ground_truth: "positive"
+            }
+          },
+          {
+            item: {
+              input: "This is terrible. Very disappointed.",
+              ground_truth: "negative"
+            }
+          },
+          {
+            item: {
+              input: "It's okay, nothing special.",
+              ground_truth: "neutral"
+            }
+          }
+        ]
+      }
+    },
+    metadata: { experiment: "baseline", date: "2024-01-15" }
+  }
+)
+puts response["id"]
+# => "evalrun_xyz789"
+```
+
+#### List Eval Runs
+
+List all runs for a specific evaluation:
+
+```ruby
+# List all runs
+response = client.evals.runs.list(eval_id: eval_id)
+
+# List with limit
+response = client.evals.runs.list(
+  eval_id: eval_id,
+  parameters: { limit: 10 }
+)
+
+# List with pagination
+response = client.evals.runs.list(
+  eval_id: eval_id,
+  parameters: { after: "evalrun_abc123", limit: 20 }
+)
+```
+
+#### Retrieve an Eval Run
+
+Get details about a specific evaluation run:
+
+```ruby
+run_id = "evalrun_xyz789"
+response = client.evals.runs.retrieve(
+  eval_id: eval_id,
+  id: run_id
+)
+puts response["status"]
+# => "completed"
+```
+
+#### Cancel an Eval Run
+
+Cancel a running evaluation:
+
+```ruby
+response = client.evals.runs.cancel(
+  eval_id: eval_id,
+  id: run_id
+)
+puts response["status"]
+# => "canceled"
+```
+
+#### Delete an Eval Run
+
+Delete an evaluation run:
+
+```ruby
+response = client.evals.runs.delete(
+  eval_id: eval_id,
+  id: run_id
+)
+puts response["deleted"]
+# => true
+```
+
+#### List Output Items
+
+Retrieve the output items from an evaluation run:
+
+```ruby
+# List all output items
+response = client.evals.runs.output_items.list(
+  eval_id: eval_id,
+  run_id: run_id
+)
+
+# List with pagination
+response = client.evals.runs.output_items.list(
+  eval_id: eval_id,
+  run_id: run_id,
+  parameters: { limit: 10, after: "item_abc123" }
+)
+```
+
+#### Retrieve an Output Item
+
+Get details about a specific output item:
+
+```ruby
+output_item_id = "item_abc123"
+response = client.evals.runs.output_items.retrieve(
+  eval_id: eval_id,
+  run_id: run_id,
+  id: output_item_id
+)
+puts response["status"]
+# => "pass"
 ```
 
 ### Image Generation

@@ -41,6 +41,10 @@ module OpenAI
         @client.get(path: "/evals/#{eval_id}/runs/#{id}")
       end
 
+      def list(eval_id:, parameters: {})
+        @client.get(path: "/evals/#{eval_id}/runs", parameters: parameters)
+      end
+
       def cancel(eval_id:, id:)
         @client.post(path: "/evals/#{eval_id}/runs/#{id}/cancel")
       end

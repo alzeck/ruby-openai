@@ -1,0 +1,131 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openai.com/v1/evals/eval_6928994e3c788191aa5575493ab58226/runs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Nov 2025 18:32:48 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-jxm65ijkzc1qrfhc0ij8moic
+      X-Request-Id:
+      - req_4014e25ebde4430ae5ff17e80598937c
+      Openai-Processing-Ms:
+      - '310'
+      Vary:
+      - Accept-Encoding
+      X-Envoy-Upstream-Service-Time:
+      - '313'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=RCxCb9hNoDNLsT8SSz.QWaZ16OE3wz0H2OOVgObF0Hg-1764268368-1.0.1.1-xbuw3j1YAdWfl2qFpzspmbbwU220pO9LL4W14d4GqWvMorzobwUPp373M6RGG4obrYtV.kSFHFeBERs2yiVxllmvySVXHgXIeF1WqLf99zc;
+        path=/; expires=Thu, 27-Nov-25 19:02:48 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=69e_irZTWWiJst8RToJInC_xiIGqs6FHMv9GIZeo2cA-1764268368400-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a53b5d36820cd1a-LHR
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "object": "list",
+          "data": [
+            {
+              "id": "evalrun_6928994f39d88191b9a47a69de5eda51",
+              "object": "eval.run",
+              "created_at": 1764268367,
+              "status": "in_progress",
+              "data_source": {
+                "type": "completions",
+                "source": {
+                  "type": "file_content",
+                  "content": [
+                    {
+                      "item": {
+                        "input": "I love this product!",
+                        "ground_truth": "positive"
+                      }
+                    }
+                  ]
+                },
+                "input_messages": {
+                  "type": "template",
+                  "template": [
+                    {
+                      "type": "message",
+                      "role": "developer",
+                      "content": "You are a helpful assistant."
+                    },
+                    {
+                      "type": "message",
+                      "role": "user",
+                      "content": "{{item.input}}"
+                    }
+                  ]
+                },
+                "model": "gpt-4o-mini",
+                "provider_credentials": null,
+                "modalities": null,
+                "sampling_params": null
+              },
+              "error": null,
+              "eval_id": "eval_6928994e3c788191aa5575493ab58226",
+              "model": "gpt-4o-mini",
+              "name": "Run 1",
+              "per_model_usage": null,
+              "per_testing_criteria_results": null,
+              "report_url": "https://platform.openai.com/evaluations/eval_6928994e3c788191aa5575493ab58226?project_id=proj_0h5pObirNvBYj1ZWydWLSS04&run_id=evalrun_6928994f39d88191b9a47a69de5eda51",
+              "result_counts": {
+                "errored": 0,
+                "failed": 0,
+                "passed": 0,
+                "total": 0
+              },
+              "shared_with_openai": false,
+              "metadata": {}
+            }
+          ],
+          "first_id": "evalrun_6928994f39d88191b9a47a69de5eda51",
+          "has_more": false,
+          "last_id": "evalrun_6928994f39d88191b9a47a69de5eda51"
+        }
+  recorded_at: Thu, 27 Nov 2025 18:32:48 GMT
+recorded_with: VCR 6.3.1
