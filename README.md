@@ -1684,7 +1684,21 @@ client.messages.list(thread_id: thread_id)
 
 ### Evals
 
-Evals allow you to systematically evaluate the quality and performance of your AI models. You can create evaluations with specific testing criteria, run them against your models, and analyze the results.
+The [Evals Api](https://platform.openai.com/docs/api-reference/evals) allow you to systematically evaluate the quality and performance of your AI models.
+
+**Supported Endpoints:**
+- `POST /v1/evals` - Create an evaluation
+- `GET /v1/evals/{id}` - Retrieve an evaluation
+- `GET /v1/evals` - List evaluations
+- `POST /v1/evals/{id}` - Update an evaluation
+- `DELETE /v1/evals/{id}` - Delete an evaluation
+- `POST /v1/evals/{id}/runs` - Create an evaluation run
+- `GET /v1/evals/{id}/runs/{run_id}` - Retrieve an evaluation run
+- `GET /v1/evals/{id}/runs` - List evaluation runs
+- `POST /v1/evals/{id}/runs/{run_id}/cancel` - Cancel an evaluation run
+- `DELETE /v1/evals/{id}/runs/{run_id}` - Delete an evaluation run
+- `GET /v1/evals/{id}/runs/{run_id}/output_items` - List output items
+- `GET /v1/evals/{id}/runs/{run_id}/output_items/{item_id}` - Retrieve an output item
 
 #### Create an Eval
 
