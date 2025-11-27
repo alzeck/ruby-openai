@@ -1684,7 +1684,7 @@ client.messages.list(thread_id: thread_id)
 
 ### Evals
 
-The [Evals Api](https://platform.openai.com/docs/api-reference/evals) allow you to systematically evaluate the quality and performance of your AI models.
+The [Evals API](https://platform.openai.com/docs/api-reference/evals) allows you to systematically evaluate the quality and performance of your AI models.
 
 **Supported Endpoints:**
 - `POST /v1/evals` - Create an evaluation
