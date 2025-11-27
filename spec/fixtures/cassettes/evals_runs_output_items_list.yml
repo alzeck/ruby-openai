@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openai.com/v1/evals/eval_69288c6d54f48191bb18d415547ff09c/runs/evalrun_69288c6e2dac819181b017027cd1d2ba/output_items
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Nov 2025 17:37:51 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-jxm65ijkzc1qrfhc0ij8moic
+      X-Request-Id:
+      - req_044e8ae19b15a7101a63c51d97527437
+      Openai-Processing-Ms:
+      - '380'
+      Vary:
+      - Accept-Encoding
+      X-Envoy-Upstream-Service-Time:
+      - '382'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=Ij1_ZQwKnjbo57fg2wgjLL6wo6ykZnDO32Ca0ushv18-1764265071-1.0.1.1-b0Zelat_yRyQHGzvXuBH7A62cjICDnwr8.KXH1ZNQ8nhk9qYmI4U3xE.6e6CojNe5CAODZVFAWymziugL4BG96hgHnpMUmgZzkh.0aCpR9M;
+        path=/; expires=Thu, 27-Nov-25 18:07:51 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=5kFavy3PInCs8S45ZxHlLdbcTlGBpxX80ap0mbCmaGc-1764265071138-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a5365532c7ab128-MAN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "object": "list",
+          "data": [],
+          "first_id": null,
+          "has_more": false,
+          "last_id": null
+        }
+  recorded_at: Thu, 27 Nov 2025 17:37:51 GMT
+recorded_with: VCR 6.3.1

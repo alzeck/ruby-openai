@@ -1,0 +1,303 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openai.com/v1/evals/eval_69288c6f782c8191900a5cb6be3db61e/runs/evalrun_69288c70a03881919438f1de10070910/output_items
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Nov 2025 17:57:40 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-jxm65ijkzc1qrfhc0ij8moic
+      X-Request-Id:
+      - req_63f77af99d92f4ad3817b3439f12de1c
+      Openai-Processing-Ms:
+      - '386'
+      Vary:
+      - Accept-Encoding
+      X-Envoy-Upstream-Service-Time:
+      - '388'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=3KuybbQ5ivkgrdoN8P1j2dPObVied6ifNmVh4kUsZbQ-1764266260-1.0.1.1-yfOh7gnUJL3FHVOt4IEgFaKUZldHA2wK6vJofU4dU.x11w9ng8sRVPOrbK4ASfW2RI3L86PErGFm7tv3qy9VUza6CNSyWLgJxcSynLbK9z0;
+        path=/; expires=Thu, 27-Nov-25 18:27:40 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=jA56LhejCounC.ZFpgofvJ2Nk9OTb5HVXFeLiqACL1U-1764266260747-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a53825d6a22eb1d-MAN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "object": "list",
+          "data": [
+            {
+              "id": "outputitem_69288c7485688191b3f81ee02a17a2b8",
+              "object": "eval.run.output_item",
+              "created_at": 1764265076,
+              "status": "pass",
+              "_datasource_item_content_hash": "07bd0d39b771a2e3976c536264799dc3f2b6e5e943a8d68dc3058bac176de445",
+              "available_includes": [],
+              "datasource_item": {
+                "input": "I love this product!",
+                "ground_truth": "positive"
+              },
+              "datasource_item_id": 0,
+              "eval_id": "eval_69288c6f782c8191900a5cb6be3db61e",
+              "results": [
+                {
+                  "name": "Sentiment grader-32bb5cf1-b6c0-4030-ba29-10a1dca004ac",
+                  "score": 1.0,
+                  "passed": true,
+                  "sample": {
+                    "input": [
+                      {
+                        "role": "developer",
+                        "content": "Classify the sentiment of the following statement as one of 'positive', 'neutral', or 'negative'"
+                      },
+                      {
+                        "role": "user",
+                        "content": "Statement: I love this product!"
+                      }
+                    ],
+                    "output": [
+                      {
+                        "role": "assistant",
+                        "content": "{\n  \"steps\": [\n    {\n      \"description\": \"The statement 'I love this product!' includes the word 'love,' indicating a strong positive emotion towards the product.\",\n      \"conclusion\": \"The sentiment is positive.\"\n    }\n  ],\n  \"result\": \"positive\"\n}"
+                      }
+                    ],
+                    "finish_reason": "stop",
+                    "model": "o3-mini-2025-01-31",
+                    "usage": {
+                      "total_tokens": 287,
+                      "completion_tokens": 137,
+                      "prompt_tokens": 150,
+                      "cached_tokens": 0
+                    },
+                    "error": null,
+                    "temperature": 1.0,
+                    "top_p": 1.0
+                  }
+                }
+              ],
+              "run_id": "evalrun_69288c70a03881919438f1de10070910",
+              "sample": {
+                "input": [
+                  {
+                    "role": "developer",
+                    "content": "You are a helpful assistant."
+                  },
+                  {
+                    "role": "user",
+                    "content": "I love this product!"
+                  }
+                ],
+                "output": [
+                  {
+                    "role": "assistant",
+                    "content": "That's great to hear! What product are you referring to? I'd love to know more about it and what you enjoy about it!"
+                  }
+                ],
+                "finish_reason": "stop",
+                "model": "gpt-4o-mini-2024-07-18",
+                "usage": {
+                  "total_tokens": 48,
+                  "completion_tokens": 26,
+                  "prompt_tokens": 22,
+                  "cached_tokens": 0
+                },
+                "error": null,
+                "temperature": 1.0,
+                "top_p": 1.0
+              }
+            }
+          ],
+          "first_id": "outputitem_69288c7485688191b3f81ee02a17a2b8",
+          "has_more": false,
+          "last_id": "outputitem_69288c7485688191b3f81ee02a17a2b8"
+        }
+  recorded_at: Thu, 27 Nov 2025 17:57:40 GMT
+- request:
+    method: get
+    uri: https://api.openai.com/v1/evals/eval_69288c6f782c8191900a5cb6be3db61e/runs/evalrun_69288c70a03881919438f1de10070910/output_items/outputitem_69288c7485688191b3f81ee02a17a2b8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Nov 2025 17:57:41 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-jxm65ijkzc1qrfhc0ij8moic
+      X-Request-Id:
+      - req_96ab283a68914e5aae9e838825b84daa
+      Openai-Processing-Ms:
+      - '275'
+      Vary:
+      - Accept-Encoding
+      X-Envoy-Upstream-Service-Time:
+      - '277'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=MpuILeElqrljrDl2kgh.q2CvWdew2aULy1VsYpIJLNw-1764266261-1.0.1.1-FOnzEQiiVXTlMCOaCE7fFSD2AiAu_M8r__8x6H8TAdj1_u0cNrAVEidH2LWeOVx022TfA4Qojh2ARuZcSxvIArc6GC0PpDUH_lV_7NpqB34;
+        path=/; expires=Thu, 27-Nov-25 18:27:41 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=qAK71GovjGWZA0BgqVhkKve3h_zFGkBk0nJgN3qfOzY-1764266261401-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a5382624872b134-MAN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "outputitem_69288c7485688191b3f81ee02a17a2b8",
+          "object": "eval.run.output_item",
+          "created_at": 1764265076,
+          "status": "pass",
+          "_datasource_item_content_hash": "07bd0d39b771a2e3976c536264799dc3f2b6e5e943a8d68dc3058bac176de445",
+          "available_includes": [],
+          "datasource_item": {
+            "input": "I love this product!",
+            "ground_truth": "positive"
+          },
+          "datasource_item_id": 0,
+          "eval_id": "eval_69288c6f782c8191900a5cb6be3db61e",
+          "results": [
+            {
+              "name": "Sentiment grader-32bb5cf1-b6c0-4030-ba29-10a1dca004ac",
+              "score": 1.0,
+              "passed": true,
+              "sample": {
+                "input": [
+                  {
+                    "role": "developer",
+                    "content": "Classify the sentiment of the following statement as one of 'positive', 'neutral', or 'negative'"
+                  },
+                  {
+                    "role": "user",
+                    "content": "Statement: I love this product!"
+                  }
+                ],
+                "output": [
+                  {
+                    "role": "assistant",
+                    "content": "{\n  \"steps\": [\n    {\n      \"description\": \"The statement 'I love this product!' includes the word 'love,' indicating a strong positive emotion towards the product.\",\n      \"conclusion\": \"The sentiment is positive.\"\n    }\n  ],\n  \"result\": \"positive\"\n}"
+                  }
+                ],
+                "finish_reason": "stop",
+                "model": "o3-mini-2025-01-31",
+                "usage": {
+                  "total_tokens": 287,
+                  "completion_tokens": 137,
+                  "prompt_tokens": 150,
+                  "cached_tokens": 0
+                },
+                "error": null,
+                "temperature": 1.0,
+                "top_p": 1.0
+              }
+            }
+          ],
+          "run_id": "evalrun_69288c70a03881919438f1de10070910",
+          "sample": {
+            "input": [
+              {
+                "role": "developer",
+                "content": "You are a helpful assistant."
+              },
+              {
+                "role": "user",
+                "content": "I love this product!"
+              }
+            ],
+            "output": [
+              {
+                "role": "assistant",
+                "content": "That's great to hear! What product are you referring to? I'd love to know more about it and what you enjoy about it!"
+              }
+            ],
+            "finish_reason": "stop",
+            "model": "gpt-4o-mini-2024-07-18",
+            "usage": {
+              "total_tokens": 48,
+              "completion_tokens": 26,
+              "prompt_tokens": 22,
+              "cached_tokens": 0
+            },
+            "error": null,
+            "temperature": 1.0,
+            "top_p": 1.0
+          }
+        }
+  recorded_at: Thu, 27 Nov 2025 17:57:41 GMT
+recorded_with: VCR 6.3.1

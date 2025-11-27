@@ -1,0 +1,196 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/evals/eval_69288d369be48191a9dd469d6cb22c9f/runs/evalrun_69288d37912c81919e794ac84108363b/cancel
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Nov 2025 17:41:13 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-jxm65ijkzc1qrfhc0ij8moic
+      X-Request-Id:
+      - req_0e5f5722ba2a4e819f366b5b08f03d05
+      Openai-Processing-Ms:
+      - '555'
+      Vary:
+      - Accept-Encoding
+      X-Envoy-Upstream-Service-Time:
+      - '558'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=HUQa2g4EML8HJ0fSYEyP8Y1LvFWAs0vMtx_2K2jXggA-1764265273-1.0.1.1-wLir27KcO3TJiEsJtTgjKpw02lSnGmQNyqlkZ4ljpvWaIsI5f4TrbxqT2Fi9klEzlfvGbpNyTaVJjcazBJ0Cu5Ezr_yl_Rns_F_9yxrGoFM;
+        path=/; expires=Thu, 27-Nov-25 18:11:13 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=VPa8xE7AHfpB9ZpDZZ8Tb0x8BiBplf_CE5ylsOX4FZE-1764265273069-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a536a403929eb17-MAN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "evalrun_69288d37912c81919e794ac84108363b",
+          "object": "eval.run",
+          "created_at": 1764265271,
+          "status": "canceled",
+          "data_source": {
+            "type": "completions",
+            "source": {
+              "type": "file_content",
+              "content": [
+                {
+                  "item": {
+                    "input": "I love this product!",
+                    "ground_truth": "positive"
+                  }
+                }
+              ]
+            },
+            "input_messages": {
+              "type": "template",
+              "template": [
+                {
+                  "type": "message",
+                  "role": "developer",
+                  "content": "You are a helpful assistant."
+                },
+                {
+                  "type": "message",
+                  "role": "user",
+                  "content": "{{item.input}}"
+                }
+              ]
+            },
+            "model": "gpt-4o-mini",
+            "provider_credentials": null,
+            "modalities": null,
+            "sampling_params": null
+          },
+          "error": null,
+          "eval_id": "eval_69288d369be48191a9dd469d6cb22c9f",
+          "model": "gpt-4o-mini",
+          "name": "Run 1",
+          "per_model_usage": null,
+          "per_testing_criteria_results": null,
+          "report_url": "https://platform.openai.com/evaluations/eval_69288d369be48191a9dd469d6cb22c9f?project_id=proj_0h5pObirNvBYj1ZWydWLSS04&run_id=evalrun_69288d37912c81919e794ac84108363b",
+          "result_counts": {
+            "errored": 0,
+            "failed": 0,
+            "passed": 0,
+            "total": 0
+          },
+          "shared_with_openai": false,
+          "metadata": {}
+        }
+  recorded_at: Thu, 27 Nov 2025 17:41:13 GMT
+- request:
+    method: delete
+    uri: https://api.openai.com/v1/evals/eval_69288d369be48191a9dd469d6cb22c9f/runs/evalrun_69288d37912c81919e794ac84108363b
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Nov 2025 17:41:14 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-jxm65ijkzc1qrfhc0ij8moic
+      X-Request-Id:
+      - req_f31add9c41781b9ef7f694152f59dadf
+      Openai-Processing-Ms:
+      - '763'
+      Vary:
+      - Accept-Encoding
+      X-Envoy-Upstream-Service-Time:
+      - '767'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=f9nvHlPi3UV7AK.TJumxczUKk1dIQDhExsuDFexiC.o-1764265274-1.0.1.1-GRqhzByoSCF1KKz1tZXP23mtv9XboeAZfYge3kRkZ2xpVGDqAuxUOpqK8oxTahqMEYXBH1NvIDolFuhNGFmlJsbU2s_qGdYlnjxe5odg_Ss;
+        path=/; expires=Thu, 27-Nov-25 18:11:14 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=kt_WqBTaaNSKPkhG35J4JsD8KAwC3rcdQEFaxw2b_do-1764265274323-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a536a454a12b140-MAN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "object": "eval.run.deleted",
+          "deleted": true,
+          "run_id": "evalrun_69288d37912c81919e794ac84108363b"
+        }
+  recorded_at: Thu, 27 Nov 2025 17:41:14 GMT
+recorded_with: VCR 6.3.1

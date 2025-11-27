@@ -1,0 +1,123 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.openai.com/v1/evals/eval_69288c6a0c488191ac6adc60180c4d03/runs/evalrun_69288c6a90708191b86c7e82b893c846
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Nov 2025 17:37:47 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-jxm65ijkzc1qrfhc0ij8moic
+      X-Request-Id:
+      - req_46323b933a8c92d4fb5a19503306f7e9
+      Openai-Processing-Ms:
+      - '135'
+      Vary:
+      - Accept-Encoding
+      X-Envoy-Upstream-Service-Time:
+      - '138'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=qweBroIdUWsc2kwidjmrBoBjh0AgfmD9HIlYa7dr9U8-1764265067-1.0.1.1-s4MB7.JR0s1NVmhpFZtvnXP.ZjY7LBRRIGftgzUzTdfSaoEYyOXOl5b46LNRRoz_RSSRyhL_aRcnfjC259bzh4VuzydeG3pQrpbPzJ4pImQ;
+        path=/; expires=Thu, 27-Nov-25 18:07:47 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=tN3KJHPGcEeisrKyUp1v_Qxgl0niwbz0WWiaLrsuvfI-1764265067259-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a53653c9a130d8b-MAN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "evalrun_69288c6a90708191b86c7e82b893c846",
+          "object": "eval.run",
+          "created_at": 1764265066,
+          "status": "in_progress",
+          "data_source": {
+            "type": "completions",
+            "source": {
+              "type": "file_content",
+              "content": [
+                {
+                  "item": {
+                    "input": "I love this product!",
+                    "ground_truth": "positive"
+                  }
+                }
+              ]
+            },
+            "input_messages": {
+              "type": "template",
+              "template": [
+                {
+                  "type": "message",
+                  "role": "developer",
+                  "content": "You are a helpful assistant."
+                },
+                {
+                  "type": "message",
+                  "role": "user",
+                  "content": "{{item.input}}"
+                }
+              ]
+            },
+            "model": "gpt-4o-mini",
+            "provider_credentials": null,
+            "modalities": null,
+            "sampling_params": null
+          },
+          "error": null,
+          "eval_id": "eval_69288c6a0c488191ac6adc60180c4d03",
+          "model": "gpt-4o-mini",
+          "name": "Run 1",
+          "per_model_usage": null,
+          "per_testing_criteria_results": null,
+          "report_url": "https://platform.openai.com/evaluations/eval_69288c6a0c488191ac6adc60180c4d03?project_id=proj_0h5pObirNvBYj1ZWydWLSS04&run_id=evalrun_69288c6a90708191b86c7e82b893c846",
+          "result_counts": {
+            "errored": 0,
+            "failed": 0,
+            "passed": 0,
+            "total": 0
+          },
+          "shared_with_openai": false,
+          "metadata": {}
+        }
+  recorded_at: Thu, 27 Nov 2025 17:37:47 GMT
+recorded_with: VCR 6.3.1

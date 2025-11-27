@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://api.openai.com/v1/evals/eval_69288c753da081918baccc440dfb3cea
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Nov 2025 17:37:57 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-jxm65ijkzc1qrfhc0ij8moic
+      X-Request-Id:
+      - req_5b2c7c66080f297227416bf472b45866
+      Openai-Processing-Ms:
+      - '267'
+      Vary:
+      - Accept-Encoding
+      X-Envoy-Upstream-Service-Time:
+      - '269'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=FDivFwBSqSQaDjz.Sv2hSLAw1c.5lyvVl0nLrxBNXHo-1764265077-1.0.1.1-KkM8oLJRZq5PU2QFlnlZFTTWvrS77ZQkSbdDyJTCxO_5sOqJZ8VB8KXJw4lN0JxBa06O3AaCfEBncyzc78mA7scuegGDTEebpLCiXE4iF3U;
+        path=/; expires=Thu, 27-Nov-25 18:07:57 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=I7CzEHguum6GIZRgNj0yySn3bEm20mjveBzKgnyKSA0-1764265077911-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a53657e4af94d65-MAN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "object": "eval.deleted",
+          "deleted": true,
+          "eval_id": "eval_69288c753da081918baccc440dfb3cea"
+        }
+  recorded_at: Thu, 27 Nov 2025 17:37:57 GMT
+recorded_with: VCR 6.3.1

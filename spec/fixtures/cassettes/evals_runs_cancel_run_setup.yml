@@ -1,0 +1,125 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/evals/eval_69288c7132e48191ad7ff46c32cf1c46/runs
+    body:
+      encoding: UTF-8
+      string: '{"name":"Run 1","data_source":{"type":"completions","input_messages":{"type":"template","template":[{"role":"developer","content":"You
+        are a helpful assistant."},{"role":"user","content":"{{item.input}}"}]},"model":"gpt-4o-mini","source":{"type":"file_content","content":[{"item":{"input":"I
+        love this product!","ground_truth":"positive"}}]}}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer <OPENAI_ACCESS_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Thu, 27 Nov 2025 17:37:54 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-jxm65ijkzc1qrfhc0ij8moic
+      X-Request-Id:
+      - req_0093cd2118771c8e402a60b5407cc55a
+      Openai-Processing-Ms:
+      - '406'
+      Vary:
+      - Accept-Encoding
+      X-Envoy-Upstream-Service-Time:
+      - '408'
+      X-Openai-Proxy-Wasm:
+      - v0.1
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=uM0mV1hkYyLOKIK2GYHYsHFckJcIb2swTCF8MGpNWRQ-1764265074-1.0.1.1-MVHCmdcMYkqpRZoXUHf1Xaqx4uSf2gOzKUZef1C2cA11076.c5EnrNdYpkEC9Plv.aSuHmwDcU8ymp8rmkRfLcdBBpKEldY1LB4VhoKgS1A;
+        path=/; expires=Thu, 27-Nov-25 18:07:54 GMT; domain=.api.openai.com; HttpOnly;
+        Secure; SameSite=None
+      - _cfuvid=4CiPhk45QtL_dsOtL13kGKXPphdXg2Qyj1NKAWiyHTI-1764265074004-0.0.1.1-604800000;
+        path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
+      X-Content-Type-Options:
+      - nosniff
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9a536564fcdcb0fb-MAN
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        {
+          "id": "evalrun_69288c71b74c819183f7e7ed01b4d5ff",
+          "object": "eval.run",
+          "created_at": 1764265073,
+          "status": "queued",
+          "data_source": {
+            "type": "completions",
+            "source": {
+              "type": "file_content",
+              "content": [
+                {
+                  "item": {
+                    "input": "I love this product!",
+                    "ground_truth": "positive"
+                  }
+                }
+              ]
+            },
+            "input_messages": {
+              "type": "template",
+              "template": [
+                {
+                  "type": "message",
+                  "role": "developer",
+                  "content": "You are a helpful assistant."
+                },
+                {
+                  "type": "message",
+                  "role": "user",
+                  "content": "{{item.input}}"
+                }
+              ]
+            },
+            "model": "gpt-4o-mini",
+            "provider_credentials": null,
+            "modalities": null,
+            "sampling_params": null
+          },
+          "error": null,
+          "eval_id": "eval_69288c7132e48191ad7ff46c32cf1c46",
+          "model": "gpt-4o-mini",
+          "name": "Run 1",
+          "per_model_usage": null,
+          "per_testing_criteria_results": null,
+          "report_url": "https://platform.openai.com/evaluations/eval_69288c7132e48191ad7ff46c32cf1c46?project_id=proj_0h5pObirNvBYj1ZWydWLSS04&run_id=evalrun_69288c71b74c819183f7e7ed01b4d5ff",
+          "result_counts": {
+            "errored": 0,
+            "failed": 0,
+            "passed": 0,
+            "total": 0
+          },
+          "shared_with_openai": false,
+          "metadata": {}
+        }
+  recorded_at: Thu, 27 Nov 2025 17:37:53 GMT
+recorded_with: VCR 6.3.1
