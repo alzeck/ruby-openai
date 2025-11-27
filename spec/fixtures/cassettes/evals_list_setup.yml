@@ -26,7 +26,7 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Thu, 27 Nov 2025 17:37:45 GMT
+      - Thu, 27 Nov 2025 18:52:48 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -38,13 +38,13 @@ http_interactions:
       Openai-Organization:
       - user-jxm65ijkzc1qrfhc0ij8moic
       X-Request-Id:
-      - req_ad59a4421109d03bf16f0dd5d568cb43
+      - req_60d32089805131c0071ce9eccb04177f
       Openai-Processing-Ms:
-      - '187'
+      - '550'
       Vary:
       - Accept-Encoding
       X-Envoy-Upstream-Service-Time:
-      - '189'
+      - '552'
       X-Openai-Proxy-Wasm:
       - v0.1
       Strict-Transport-Security:
@@ -52,26 +52,26 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=2URRA0QzprNNuNe_uY_bAL3M.w.SeU2zUU2uu7Rgmz0-1764265065-1.0.1.1-vCfd9v8Qx1oKdvy8E2piuOxlGUK3rPotuNjTxl6IQYJ5WVaFqosWj4aLGxWLszSIoI0n04TnlJXIP.7QK4mv0e4P5vPOsuKUcXtA8Li09Yc;
-        path=/; expires=Thu, 27-Nov-25 18:07:45 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=eFEINPHuc34CMCYL.SDiqLlyW4rJ.vafcOPwqC2BIDE-1764269568-1.0.1.1-CSW4VNVaa1sxqRqpfLPzzndPm4jSUTy_Rv8_rGTkh1X7cM1u91acPyUt_uboA44es5iyv.HJrprMsbi1okkD596sIKD189Iw3ijBcKj2i0A;
+        path=/; expires=Thu, 27-Nov-25 19:22:48 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=YlC8_GZoyq1p_SeriLDaxuZ8sWYRFXIDpqQJzx6Rz.4-1764265065064-0.0.1.1-604800000;
+      - _cfuvid=1N0rpQDL2dtXgQFGNlVf.SVMbsPNPJg58wihf2nOrvM-1764269568498-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 9a53652e5cc9b11c-MAN
+      - 9a53d31ebd220764-MAN
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |-
         {
-          "id": "eval_69288c68ed50819185ed5845facf0be6",
+          "id": "eval_69289e005d008191bc07606b2ceb522c",
           "object": "eval",
-          "created_at": 1764265064,
+          "created_at": 1764269568,
           "data_source_config": {
             "type": "custom",
             "max_items": null,
@@ -242,7 +242,7 @@ http_interactions:
           "name": "Sentiment Analysis",
           "testing_criteria": [
             {
-              "id": "Sentiment grader-cd6a1097-7691-4502-a5f0-49c7e0043428",
+              "id": "Sentiment grader-88f5e332-d4f9-4843-aae1-918789dba587",
               "type": "label_model",
               "grdr_id": null,
               "inactive_at": null,
@@ -273,5 +273,5 @@ http_interactions:
           ],
           "metadata": {}
         }
-  recorded_at: Thu, 27 Nov 2025 17:37:45 GMT
+  recorded_at: Thu, 27 Nov 2025 18:52:48 GMT
 recorded_with: VCR 6.3.1
